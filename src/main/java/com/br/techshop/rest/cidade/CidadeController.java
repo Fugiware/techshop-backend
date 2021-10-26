@@ -1,4 +1,4 @@
-package com.br.techshop.Estado;
+package com.br.techshop.rest.cidade;
 
 import java.util.List;
 
@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/estado")
-public class EstadoController {
+@RequestMapping("/cidade")
+public class CidadeController {
 	
 	@Autowired
-	private EstadoService estadoService;
+	private CidadeService cidadeService;
 	
 	@GetMapping("")
-	public List<Estado> getAll() {
-		return estadoService.getAll();
+	public List<Cidade> getAll() {
+		return cidadeService.getAll();
 	}	
 	
 	@GetMapping("/{id}")
-	public Estado getById(@PathVariable("id") Integer id) {
-		return estadoService.getById(id);
+	public Cidade getById(@PathVariable("id") Integer id) {
+		return cidadeService.getById(id);
 	}	
 	
 	@PostMapping("")
-	public Estado saveNew(@RequestBody Estado estado) {
-		return estadoService.saveNew(estado);
+	public Cidade saveNew(@RequestBody Cidade cidade) {
+		return cidadeService.saveNew(cidade);
 	}
 	
 	@PutMapping("/{id}")
-	public Estado update(@PathVariable("id") Integer id, @RequestBody Estado estado) {
-		return estadoService.update(id, estado);
+	public Cidade update(@PathVariable("id") Integer id, @RequestBody Cidade cidade) {
+		return cidadeService.update(id, cidade);
 	}
 }

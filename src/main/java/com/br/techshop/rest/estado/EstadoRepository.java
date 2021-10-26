@@ -1,4 +1,4 @@
-package com.br.techshop.Estado;
+package com.br.techshop.rest.estado;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

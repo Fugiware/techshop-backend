@@ -1,4 +1,4 @@
-package com.br.techshop.Estado;
+package com.br.techshop.rest.estado;
 
 import java.util.List;
 
