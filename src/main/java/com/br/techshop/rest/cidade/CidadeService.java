@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
+
+import com.br.techshop.rest.estado.Estado;
 
 @Service
 public class CidadeService {
@@ -17,6 +18,13 @@ public class CidadeService {
 	
 	public Cidade getById(Integer id) {
 		return repository.findById(id).orElse(null);
+	}
+	
+	public List<Cidade> getByEstadoId(Integer id) {
+		Estado estado = new Estado();
+		estado.setId(id);
+		
+		return repository.findByEstado(estado);
 	}
 	
 	public Cidade saveNew(Cidade cidade) {
